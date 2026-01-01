@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/user.js"></script>
+</head>
+<body>
+    <h1>Welcome User</h1>
+    <button onclick="logoutUser()">Logout</button>
+
+    <h2>Search Members</h2>
+    <input type="text" id="searchName" placeholder="Enter name">
+    <button onclick="searchMembers(document.getElementById('searchName').value)">Search</button>
+
+    <h2>Member Details</h2>
+    <input type="text" id="memberId" placeholder="Enter Member ID">
+    <button onclick="viewMemberDetails(document.getElementById('memberId').value)">View Details</button>
+</body>
+</html>

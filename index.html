@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GYM Management System - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <select id="role">
+            <option value="admin">Admin</option>
+            <option value="member">Member</option>
+            <option value="user">User</option>
+        </select>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <script>
+        function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const role = document.getElementById('role').value;
+            let redirect = '';
+
+            if(role === 'admin') redirect = 'admin.html';
+            else if(role === 'member') redirect = 'member.html';
+            else redirect = 'user.html';
+
+            loginUser(email, password, redirect);
+        }
+    </script>
+</body>
+</html>
